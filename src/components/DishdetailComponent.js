@@ -6,7 +6,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
         if(dish!=null)
             return(
                 <Card>
-                    <CardImg width="100%" object src={dish.image} alt={dish.name}/>
+                    <CardImg width="100%" src={dish.image} alt={dish.name}/>
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>  
                         <CardText>{dish.description}</CardText>
@@ -23,7 +23,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
             const commentSection = comments.map((com) => {
                 return ( 
                     <div  key={com.id}>
-                        <ul class = "list-unstyled">
+                        <ul className = "list-unstyled">
                             <li className="mb-3">{com.comment}</li>
                             <li>--{com.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month:'short', day:'2-digit'}).format(new Date(Date.parse(com.date)))}</li>
                         </ul>
