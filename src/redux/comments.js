@@ -15,8 +15,6 @@ export const Comments = (state= {
 
         case ActionTypes.ADD_COMMENT:
             var comment = action.payload;
-            comment.id = state.comments.length;
-            comment.date= new Date().toISOString();
             return { ...state, comments: state.comments.concat(comment)};
             // does not mutate the state, only added to memory once restarted this comment is gone
         default:
