@@ -9,13 +9,11 @@ function RenderCard({item, isLoading, errMess}){
         return(
             <Loading/>
         );
-
     }
     else if (errMess){
         return(
             <h4>{errMess}</h4>
         );
-
     }
     else
         return(
@@ -32,9 +30,7 @@ function RenderCard({item, isLoading, errMess}){
                     </CardBody>
                 </Card>
             </FadeTransform>
-
         );
-
 }
 
 function Home(props){
@@ -52,7 +48,9 @@ function Home(props){
                     errMess= {props.promosErrMess}/>
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.leader}/>
+                    <RenderCard item={props.leader}
+                        isLoading={props.leadersLoading}
+                        errMess= {props.leadersErrMess}/>
                 </div>
             </div>
         </div>
